@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>admin - request</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/request.css">
+</head>
+
+<body>
+    <header class="nav">
+        <div class="left">
+            <img src="/static/icons/manager.png" alt="">
+            <h1><a href="/user-dashboard/{{ user.id }}"></a>Welcome {{ user.username }},</h1>
+        </div>
+
+        <ul>
+            <li><a href="/user-dashboard/{{ user.id }}" class="btn btn-danger">back</a></li>
+        </ul>
+    </header>
+    <main>
+
+        <div class="req-header">
+            <h1>All Requested Products</h1>
+        </div>
+
+        <!-- First Table: Summary -->
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Request ID</th>
+                    <th>Product Name</th>
+                    <th>Category</th>
+                    <th>Requests</th>
+                    <th>Amount/unit</th>
+                    <th>Total Amount</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for req in user_requests %}
+                <tr>
+                    <td>{{ req.id }}</td>
+                    <td>{{ req.product.name }}</td>
+                    <td>{{ req.product.category }}</td>
+                    <td>{{ req.requests }}</td>
+                    <td>{{ req.product.amount }}</td>
+                    <td>{{ req.requests * req.product.amount }}</td>
+                    <td>{{ req.status }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        {% set ns = namespace(total=0) %}
+
+        {% for req in user_requests %}
+        {% set ns.total = ns.total + (req.requests * req.product.amount) %}
+        {% endfor %}
+
+        <div class="total-amount">
+            <span>Total Payable Amount: </span>
+            <span>{{ ns.total }}</span>
+        </div>
+    </main>
+
+</body>
+
+</html>

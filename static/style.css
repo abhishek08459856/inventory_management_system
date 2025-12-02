@@ -1,0 +1,31 @@
+*{
+    margin:0;
+    text-transform: capitalize;
+}
+
+#main{
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(to top, #F7F9FC,#b2c5f3);
+     overflow: hidden;  
+}
+
+#canvas{
+    width: 60%;
+    height: auto;
+    margin: auto;
+    margin-top: 30px;
+}
+
+.form-box{
+    border: 1px solid #E2E5EA;
+    width: 350px;
+    height: auto;
+    margin: auto;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    padding: 36px;
+    background-color: #FFFFFF;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.05);
+    border-radius: 14px;
+}

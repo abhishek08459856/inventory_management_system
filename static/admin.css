@@ -1,0 +1,152 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* NAVBAR */
+header.nav {
+    width: 100%;
+    height: 70px;
+    background: linear-gradient(to right, #F7F9FC, #b2c5f3);
+    border-bottom: 1px solid #d1d9f2;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 30px;
+}
+
+img {
+    height: 30px;
+}
+
+header.nav .left {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+h1 {
+    padding-top: 11px;
+    font-size: 25px;
+    color: #2B3A55; 
+}
+
+header.nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    align-items: center;
+    justify-self: center;
+}
+
+header.nav ul li {
+    font-size: 16px;
+    font-weight: 500;
+    color: #3c4c75; 
+    cursor: pointer;
+    margin-top: 17px;
+}
+
+header.nav ul li:hover {
+    color: #4A5FC1; /* premium blue */
+}
+
+header.nav ul li.logout {
+    background: #ff4d4d;
+    color: white;
+    padding: 6px 15px;
+    border-radius: 6px;
+}
+
+header.nav ul li.logout:hover {
+    background: #d93636;
+}
+
+/* ADD NEW ITEM BOX */
+.add-item-box {
+    border: 2px solid #d1d9f2;
+    width: 28vw;
+    margin: 20px auto;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    border-radius: 10px;
+    gap: 15px;
+    height: 120px;
+    background: #F7F9FC;
+}
+
+.add-item-box img {
+    height: 80px;
+}
+
+.add-item-box:hover {
+    cursor: pointer;
+    background: #edf1fb;
+}
+
+.add-item-box h2 {
+    color: #4A5FC1; 
+}
+
+/* ALL ITEMS HEADER */
+.header-box {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.header-box h1 {
+    font-size: 30px;
+    font-weight: 700;
+    margin: 0;
+    color: #2B3A55;
+}
+
+/* SEARCH BOX */
+.search-box input {
+    padding: 6px 10px;
+    font-size: 16px;
+    border: 1px solid #c8d3f5; 
+    border-radius: 6px;
+    outline: none;
+    background: #F7F9FC;
+    color: #2B3A55;
+}
+
+.search-box input[type="submit"] {
+    background: #4A5FC1;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.search-box input[type="submit"]:hover {
+    background: #3c4fb8;
+}
+
+/* MAIN CONTAINER */
+main {
+    border: 2px solid #d1d9f2;
+    margin: 10px 200px;
+    padding: 20px;
+    border-radius: 20px;
+    background: linear-gradient(to top, #ffffff, #f3f6ff);
+}
+
+/* TABLE */
+.table {
+    background: #ffffff;
+}
+
+.table thead {
+    background: #4A5FC1 !important;
+    color: white;
+}
+
+.table tbody tr:hover {
+    background: #e6ecfb !important; 
+}

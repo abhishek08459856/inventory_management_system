@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Item</title>
+       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/add.css">
+</head>
+
+<body>
+
+    <header class="nav">
+        <div class="left">
+            <img src="/static/icons/manager.png" alt="">
+            <h1><a href="/templates/admin-dashboard.html"></a>Welcome {{ user.username }},</h1>
+        </div>
+
+        <ul>
+            <li><a href="/user-dashboard/{{ user.id }}" class="btn btn-danger">back</a></li>
+        </ul>
+    </header>
+
+    <main>
+
+        <h2 class="page-title">Request New Product</h2>
+
+        <form class="item-form" action="/create_new_request/{{user.id}}/{{product.id}}" method="POST">
+
+            <label>Product Name</label>
+            <input class="form-control" type="text" value="{{ product.name }}" aria-label="Disabled input example"
+                disabled readonly>
+            <label>category Name</label>
+            <input class="form-control" type="text" value="{{ product.category }}" aria-label="Disabled input example"
+                disabled readonly>
+
+            <label>Product Quantity</label>
+            <div class="counter-box">
+                <button type="button" class="minus">-</button>
+                <input type="text" value="0" class="count" name="quantity">
+                <button type="button" class="plus">+</button>
+            </div>
+
+            <input type="submit" value="submit" class="btn btn-outline-success">
+
+        </form>
+
+    </main>
+
+</body>
+
+</html>
